@@ -1,0 +1,5 @@
+Adição de créditos ao Cloud Server:
+
+DATA		|	VALOR ATUAL (R$)	|	VALOR ADICIONADO (R$)	|	VALOR FINAL
+03/03/2023	|	29,81			|	150,00			|	179,81
+

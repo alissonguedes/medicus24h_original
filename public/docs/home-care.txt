@@ -1,0 +1,74 @@
+================================================
+
+Pacientes HomeCare - Gestão de cuidados:
+
+- ID/Nome do paciente
+- Tipo do programa
+- Responsáveis
+- Tags
+- Data de entrada
+- Motivo
+- Observações
+
+Tarefas
+
+Descrição	|	Data e hora de agendamento	|	Profissional Responsável	|	Ações
+
+================================================
+
+Motivo de ser um paciente HomeCare:
+
+1. Dados de saúde do paciente:
+	1.1.	Peso
+	1.2.	Altura
+	1.3.	IMC
+	1.4.	Temperatura
+	1.5.	Pressão arterial
+	1.6.	Frequência cardíaca
+	1.7.	Frequência respiratória
+	1.8.	Excesso de peso
+	1.9.	
+
+================================================
+
+1. Limitações:
+	1.1. 	Física
+	1.2.	Psicológica
+	1.3.	Outras
+
+================================================
+
+2. Tipos de serviços prestados:
+	2.1	Administração Medicamentosa
+	2.2	Aplicação de injetáveis		
+	2.3	Suturas
+	2.4	Curativo
+	2.5	Coletas Laboratoriais
+	2.6	Fisioterapia
+	2.7	Terapia Holística
+			-> Ozônio Terapia
+			-> Reflexologia podal
+			-> Massagem
+			-> Acupuntura
+			-> Aromaterapia
+			-> Ventosaterapia
+			-> Fitoterapia
+			-> Cromoterapia
+			-> 
+	2.8	Aplicação de injetáveis
+			-> Tipo da vacina
+			-> Quais vacinas?
+	2.9	Estética
+			-> Toxina botulínica
+			-> Limpeza de pele
+			-> Clareamento de pele
+
+==============================================
+
+Controle Estoque
+
+-> Adição de Medicamentos
+-> n
+
+================================================
+

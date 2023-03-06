@@ -1,0 +1,16 @@
+Cliente abre chamado na central de software
+
+Qual serviço?
+(Exemplo: Remoção, curativo, doula)
+
+Atendente seleciona o serviço
+
+-- Por Categorias
+
+Prioridade.
+
+- Enviar número de protocolo para o cliente
+
+Escalonamento do chamado para um médico 
+
+

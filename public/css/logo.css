@@ -1,0 +1,310 @@
+/** Logo */
+.brand-sidebar .logo-wrapper {
+	line-height: unset !important;
+	white-space: nowrap;
+	margin-left: 70px;
+	top: 0;
+	display: flex;
+	align-items: center;
+}
+
+nav .brand-logo,
+.logo a {
+	text-decoration: none;
+}
+
+nav .brand-logo,
+.brand-logo {
+	font-size: 28px !important;
+	line-height: 3;
+	position: relative;
+	color: #000;
+
+	padding: 10px 0;
+}
+
+.brand-logo .logo {
+	width: 210px;
+	display: block;
+	float: none;
+}
+
+.brand-logo small {
+	display: block;
+	font-style: normal;
+	text-transform: uppercase;
+	font-family: 'open-sans';
+	font-size: 8px;
+	letter-spacing: 5px;
+	line-height: 1.5em;
+}
+
+.brand-logo.white-text i {
+	background-image: url('../img/site/logo/logo-ico-white.png');
+}
+
+.brand-logo.white-text {
+	color: #fff;
+}
+
+/** Clinic Cloud **/
+
+/*.text-logo {
+	margin-left: 50px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	font-size: 6rem;
+	max-width: 50%;
+}*/
+
+.text-logo {
+	margin-left: 50px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	font-size: 6rem;
+	max-width: 50%;
+}
+
+.text-logo::before {
+	content: '\e2bd';
+	font-family: 'Material Icons Outlined';
+	position: relative;
+	font-size: 150%;
+	margin-right: -15%;
+	bottom: 11px;
+}
+
+.text-logo.white-text::before {
+	content: '\e2bd';
+	font-family: 'Material Icons';
+}
+
+.text-logo h5,
+.text-logo h2 {
+	font-family: 'Montserrat' !important;
+	margin: 0;
+	line-height: 1;
+	color: inherit;
+}
+
+/* .text-logo h5,
+.text-logo h2,
+.text-logo::before {
+	text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.8),
+		0px 0px 1px rgba(255, 255, 255, 0.8),
+		0px 0px 1px rgba(255, 255, 255, 0.8),
+		0px 0px 2px rgba(255, 255, 255, 0.8),
+		0px 0px 3px rgba(255, 255, 255, 1);
+} */
+
+.text-logo h5 {
+	font-size: 30%;
+	position: relative;
+	margin-top: -15%;
+	top: 0;
+	left: 40%;
+	display: inline;
+}
+
+.text-logo h2 {
+	font-size: 100%;
+	display: inline;
+	top: 0px;
+	position: relative;
+}
+
+.logo-wrapper .text-logo {
+	font-size: 2rem !important;
+}
+
+.logo-wrapper .text-logo::before {
+	margin-right: -30%;
+	bottom: 4px;
+}
+
+.logo-wrapper .text-logo h5 {
+	font-size: 30%;
+	position: relative;
+	margin-top: -30%;
+	top: 0;
+	left: 70%;
+	display: inline;
+}
+
+/* Cartão Médicus */
+.credit_card {
+	position: relative;
+	/* overflow: hidden; */
+	font-family: 'Montserrat';
+	top: -54px;
+	cursor: pointer;
+	width: 100%;
+	height: 5cm;
+}
+
+.credit_card .frente,
+.credit_card .verso {
+	position: absolute;
+	width: 9cm;
+	height: 5cm;
+	border-radius: 10px;
+	background-color: #d2373f;
+	overflow: hidden;
+}
+
+.credit_card .frente {
+	background-image: url('../img/site/logo/coracao-medicus.png');
+	background-size: 1cm;
+}
+
+.credit_card .frente::before,
+.credit_card .frente::after {
+	content: '';
+	position: absolute;
+	height: 70%;
+	width: 4px;
+	background-position: center bottom, center calc(100% - 0px);
+	background-repeat: repeat-y;
+	background-image: url('../img/site/logo/pontinlhados.png');
+	background-size: contain;
+}
+
+.credit_card .frente::before {
+	top: 2px;
+	left: 15px;
+}
+
+.credit_card .frente::after {
+	bottom: 2px;
+	left: 20px;
+}
+
+.credit_card .frente .logo {
+	width: 120px;
+	height: 38px;
+	position: absolute;
+	top: 20px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.credit_card .frente .logo.left {
+	left: 22px;
+	background-image: url('../img/site/logo/logo-white-h.png');
+}
+
+.credit_card .frente .logo.right {
+	right: 22px;
+	font-family: inherit;
+	color: #fff;
+	font-size: 15px;
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	width: auto;
+}
+
+
+.credit_card .frente .logo.right h4,
+.credit_card .frente .logo.right h5 {
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	margin: 0;
+	line-height: 1;
+}
+
+.credit_card .frente .logo.right h4 {
+	letter-spacing: -1px;
+	font-size: 15px;
+	font-weight: 300;
+}
+
+.credit_card .frente .logo.right h5 {
+	font-weight: 900;
+	letter-spacing: 3px;
+	font-size: 18px;
+	padding-left: 4px;
+}
+
+.credit_card .content {
+	position: absolute;
+	top: 70px;
+	color: #fff;
+	border: none !important;
+	padding: 0px 40px;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+.credit_card .content span {
+	font-size: 8px;
+	font-weight: 600;
+	line-height: normal;
+	margin: 0;
+	padding: 0;
+}
+
+.credit_card .content p {
+	font-size: 12px;
+	font-weight: 900;
+	text-transform: uppercase;
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+	overflow: hidden;
+	max-height: 2em;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.credit_card .footer {
+	position: absolute;
+	overflow: hidden;
+	height: 30px;
+	background: #1ea0ad;
+	bottom: 0;
+	width: 100%;
+	padding: 5px;
+	color: #fff;
+	font-weight: 900;
+}
+
+.credit_card .frente .footer:before,
+.credit_card .frente .footer:after {
+	content: '';
+	position: absolute;
+	height: 5px;
+	background: #52b2bb;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+#print_card {
+	margin-top: -40px;
+	float: right;
+}
+
+.credit_card .verso {
+	opacity: 0;
+	display: none;
+}
+
+.credit_card .verso.show {
+	opacity: 1;
+	display: block;
+}
+
+.credit_card .verso .content {
+	top: 10px;
+	padding: 0px 15px;
+}
+
+.credit_card .verso .footer {
+	height: 45px;
+	bottom: 15px;
+}

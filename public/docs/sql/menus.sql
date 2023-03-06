@@ -1,0 +1,16 @@
+INSERT INTO `tb_acl_menu_item_menu` (`id_menu`, `id_item`, `created_at`, `updated_at`, `status`) VALUES
+	('4', '6',  CURRENT_TIMESTAMP(), NULL, '1'),
+	('4', '7',  CURRENT_TIMESTAMP(), NULL, '1'),
+	('4', '8',  CURRENT_TIMESTAMP(), NULL, '1'),
+	('4', '12', CURRENT_TIMESTAMP(), NULL, '1'),
+	('4', '16', CURRENT_TIMESTAMP(), NULL, '1'),
+	('4', '17', CURRENT_TIMESTAMP(), NULL, '1'),
+	('4', '18', CURRENT_TIMESTAMP(), NULL, '1'),
+	('4', '19', CURRENT_TIMESTAMP(), NULL, '1'),
+	('4', '21', CURRENT_TIMESTAMP(), NULL, '1'),
+	('4', '22', CURRENT_TIMESTAMP(), NULL, '1'),
+	('4', '23', CURRENT_TIMESTAMP(), NULL, '1'),
+	('4', '26', CURRENT_TIMESTAMP(), NULL, '1'),
+	('4', '27', CURRENT_TIMESTAMP(), NULL, '1'),
+	('4', '28', CURRENT_TIMESTAMP(), NULL, '1'),
+	('4', '29', CURRENT_TIMESTAMP(), NULL, '1');

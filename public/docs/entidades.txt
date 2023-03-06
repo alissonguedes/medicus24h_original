@@ -1,0 +1,185 @@
+1. Qual é o tipo de projeto?
+
+	O projeto tem o objetivo de realizar o cadastro de clientes que contratam os planos da Medicus24h para o atendimento e a prestação de serviços de saúde.
+
+2. Qual é o esquema/funcionalidades, ou seja, o que deve existir no projeto?
+
+	- Cadastro de clientes
+	- Cadastro de operador
+	- Cadastro de médicos
+	- Cadastro de unidades
+	- Cadastro de convênio
+	- Cadastro de departamentos
+	- Cadastro de atendimentos
+	- Cadastro de especialidades
+
+3. Quais a áreas envolvidas?
+
+4. Ferramenta para integração no processo de desenvolvimento?
+
+5. Qual é o prazo estipulado?
+
+	- 20 dias
+
+6. Quais são os custos?
+
+7. Qual é o escopo idealizado?
+
+8. Quais são as premissas?
+
+9. Quais são as restrições?
+
+================================
+
+Primeiro módulo que precisa 
+
+Área Administrativa
+Especialidades
+	-
+Médicos
+	-
+
+- Módulo de clinica
+	- Agendamento
+		- Agendar de consultas
+		- Agendar exames
+		- Agendar procedimentos
+		- Agendar cirurgias
+		- Lembretes de (consultas, etc)
+	- Exames
+		- Laboratoriais
+		- Imagens
+		- Outros
+	- Recursos médicos
+		- Antendimento
+			- ID
+			- ID_Medico
+			- ID_Paciente
+			- Data/Hora
+			- Hora Inicial
+			- Hora Final
+			--- Retornos (parent id_atendimento)
+		- Pronturário
+		- Atestados
+		- Pedidos de exames
+		- Telemedicina
+		- Laudos
+	- Recursos Administrativos
+		- Faturamento
+		- Autorização de procedimentos
+		- Controle financeiro
+		- Estoque
+		- Impressão de notas
+		- Relatórios
+
+- Módulo de atendimento
+	- Criação de chamados
+
+	Médico -> (0,n) [atende] (0,n) <- Atendimento -> (0,n) [tem] <- (0,1) Agendamento
+	                 (0,n)
+			   |
+			 (0,n)
+		       Paciente
+
+Medico: A B C
+Pacien: A B C
+
+1 - Paciente liga solicitando atendimento;
+2 - Operador verifica agenda médica;
+3 - Operador seleciona dia na agenda;
+4 - Operador cadastra o paciente;
+    -> neste momento, basta cadastrar informações básicas (nome, telefone, email, tipo de plano [particular, convenio, outro])
+5 - Sistema salva informações iniciais do Paciente [id, nome, telefone, email, tipo de plano];
+6 - Operador agenda o atendimento [id_paciente, id_medico];
+7 - Operador salva o agendamento.
+
+
+
+
+CREATE TABLE `tb_especialidades` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `especialidade` varchar(255) NOT NULL,
+  `descricao` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela para cadastro de especialidades médicas';
+
+
+CREATE TABLE `tb_medico` (
+
+	id INT(11) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id_especialidade INT(11) UNSIGNED NOT NULL,
+	nome varchar(100) not null,
+	cpf varchar(14) UNIQUE not null,
+	crm varchar(14) UNIQUE NOT NULL,
+	rg varchar(14) UNIQUE NOT NULL,
+	created_at TIMESTAMP not null default current_timestamp(),
+	updated_at timestamp null default null,
+	status enum('0','1')  NOT NULL default '1',
+	
+	CONSTRAINT `fk_tb_medico_id_especialidade` FOREIGN KEY (`id_especialidade`) REFERENCES `tb_especialidades`(`id`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela para cadastro de atendimentos realizados.';
+
+
+CREATE TABLE `tb_atendimento` (
+
+	id INT(11) UNSIGNED ZEROFILL NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id_medico int(11) UNSIGNED NOT NULL,
+	id_paciente INT(11) UNSIGNED NOT NULL,
+	id_parent INT(11) UNSIGNED NOT NULL DEFAULT 0,
+	data_agendamento datetime not null default current_timestamp(),
+	hora_inicial time not null default '00:00:00',
+	hora_final time not null default '00:00:00',
+	tipo enum('consulta', 'retorno', 'exame', 'procedimento', 'cirurgia', 'outros') DEFAULT 'consulta',
+	status enum('agendado', 'adiado', 'remarcado', 'ausente', 'cancelado') DEFAULT 'agendado',
+	
+	CONSTRAINT `fk_tb_atendimento_id_medico` FOREIGN KEY (`id_medico`) REFERENCES `tb_medico`(`id`),
+	CONSTRAINT `fk_tb_atendimento_id_paciente` FOREIGN KEY (`id_paciente`) REFERENCES `tb_paciente`(`id`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela para cadastro de atendimentos realizados.';
+
+	
+
+CREATE TABLE `tb_atendimento_notas` (
+
+	id INT(11) UNSIGNED ZEROFILL NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id_severidade int(11) unsigned not null,
+	id_atendimento INT(11) UNSIGNED NOT NULL,
+	id_usuario int(11) UNSIGNED NOT NULL,
+	descricao varchar(1000) not null,
+	created_at timestamp not null default current_timestamp(),
+	updated_at timestamp 	 null default null,
+	
+	CONSTRAINT `fk_tb_atendimento_id_severidade` FOREIGN KEY (`id_severidade`) REFERENCES `tb_severidade_nota`(`id`),
+	CONSTRAINT `fk_tb_atendimento_id_atendimento` FOREIGN KEY (`id_atendimento`) REFERENCES `tb_atendimento`(`id`),
+	CONSTRAINT `fk_tb_atendimento_id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `tb_acl_usuario`(`id`)
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela para cadastro de notas em atendimentos realizados.';
+
+
+
+CREATE TABLE `tb_convenio` (
+
+	id INT(11) UNSIGNED ZEROFILL NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	codigo varchar(20) not null default current_timestamp(),
+	descricao INT(11) UNSIGNED NOT NULL,
+	status enum('0', '1') DEFAULT '1'
+	
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela para cadastro de convênios de pacientes.';
+
+	
+
+Médico -> 
+Agenda ->
+Paciente ->                   
+Atendimento ->
+
+
+
+
+
+	Medico (1,n) -> [faz] <- (0,n) Atendimento (0,n) -> [tem] <- (1,1) Paciente
+
+
+
+
+

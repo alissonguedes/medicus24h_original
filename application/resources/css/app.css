@@ -1,0 +1,20 @@
+.card {
+	font-family: sans-serif;
+	display: flex;
+	align-items: center;
+	place-content: center;
+	border-radius: 24px;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+	background: #00897b;
+	box-shadow: 0 16px 24px 2px rgb(0 0 0 / 14%), 0 6px 30px 5px rgb(0 0 0 / 12%), 0 8px 10px -7px rgb(0 0 0 / 20%);
+}
+
+.card-content {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 24px;
+	color: #fff;
+}
